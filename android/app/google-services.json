@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1024700357419",
+    "project_id": "project-tegar-kosan",
+    "storage_bucket": "project-tegar-kosan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024700357419:android:f6db951c93a3597022c36e",
+        "android_client_info": {
+          "package_name": "com.example.project_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKJXDzepJn7CyXwQ--7bng3AQjP2MUrjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
