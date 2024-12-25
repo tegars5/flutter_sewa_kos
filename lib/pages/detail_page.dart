@@ -206,23 +206,42 @@ class DetailPage extends StatelessWidget {
                       Container(
                         height: 88,
                         child: ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: space.photos.map((item) {
-                              return Container(
-                                margin: EdgeInsets.only(
-                                  left: edge,
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: Image.network(
-                                    item,
-                                    width: 110,
-                                    height: 88,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              );
-                            }).toList()),
+                          scrollDirection: Axis.horizontal,
+                          children: space.photos.map((item) {
+                            return Container(
+                              margin: EdgeInsets.only(left: edge),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: item.isNotEmpty
+                                    ? Image.network(
+                                        item,
+                                        width: 110,
+                                        height: 88,
+                                        fit: BoxFit.cover,
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
+                                          return Container(
+                                            width: 110,
+                                            height: 88,
+                                            color: Colors.grey,
+                                            child: const Icon(
+                                                Icons.broken_image,
+                                                color: Colors.white),
+                                          );
+                                        },
+                                      )
+                                    : Container(
+                                        width: 110,
+                                        height: 88,
+                                        color: Colors.grey,
+                                        child: const Icon(
+                                            Icons.image_not_supported,
+                                            color: Colors.white),
+                                      ),
+                              ),
+                            );
+                          }).toList(),
+                        ),
                       ),
                       const SizedBox(
                         height: 30,

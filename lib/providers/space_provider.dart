@@ -5,8 +5,8 @@ import 'package:project_app/pages/models/space.dart';
 
 class SpaceProvider extends ChangeNotifier {
   getRecommendedSpaces() async {
-    var result = await http
-        .get(Uri.parse('https://bwa-cozy-api.vercel.app/recommended-spaces'));
+    var result =
+        await http.get(Uri.parse('https://bwa-cozy-api-i9vx.vercel.app'));
 
     print(result.statusCode);
     print(result.body);
